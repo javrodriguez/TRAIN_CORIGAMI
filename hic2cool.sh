@@ -8,6 +8,7 @@
 fileName=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$1}" input.txt)
 outdir=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$2}" input.txt)
 
+cp hic2cool.py ${outdir}/hic2cool.py
 cd ${outdir}
 
 # .hic to .txt
