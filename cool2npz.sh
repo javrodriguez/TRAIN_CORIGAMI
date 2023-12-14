@@ -11,6 +11,7 @@ outdir=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$2}" input.txt)
 cp cool2npz.py ${outdir}/cool2npz.py
 cd ${outdir}
 
+module purge
 module load anaconda3/cpu/5.2.0
 conda activate hicexplorer
 
