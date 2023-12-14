@@ -8,4 +8,4 @@
 fileName=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$1}" input.txt)
 outdir=$(awk "NR==${SLURM_ARRAY_TASK_ID} {print \$2}" input.txt)
 
-gunzip -c ${fileName} > ${outdir}/matrix.cool
+gunzip -c ${fileName} > ${outdir}/matrix.hic
