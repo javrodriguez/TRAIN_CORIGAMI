@@ -15,4 +15,4 @@ module purge
 module load anaconda3/cpu/5.2.0
 conda activate hicexplorer
 
-python cool2npz.py cool.npz ./ -r 10000 -w 256
+python cool2npz.py matrix.cool ./ -r 10000 -w 256
