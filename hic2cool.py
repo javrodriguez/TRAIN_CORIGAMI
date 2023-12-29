@@ -7,7 +7,7 @@ hic_file = 'matrix.hic'
 cool_file = 'matrix.cool'
 
 data_type = 'observed' # (previous default / "main" data) or 'oe' (observed/expected)
-normalization = "NONE"  # , VC, VC_SQRT, KR, SCALE, etc.
+normalization = "VC_SQRT"  # , VC, VC_SQRT, KR, SCALE, etc.
 resolution = 10000
 
 hic = hicstraw.HiCFile(hic_file)
