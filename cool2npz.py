@@ -4,7 +4,7 @@ import numpy as np
 from cooler import Cooler
 from pathlib import Path
 
-def main(path, save_path, resolution, window_size, balance=False):
+def main(path, save_path, resolution, window_size, balance=True):
    #hic = Cooler(f'{path}::resolutions/{resolution}')
     hic = Cooler(f'{path}')
     data = hic.matrix(balance=balance, sparse=True)
@@ -36,5 +36,4 @@ if __name__ == '__main__':
     argv = parser.parse_args()
     outdir = Path(argv.outdir)
     outdir.mkdir(exist_ok=True)
-   # main(argv.path, outdir, resolution=argv.resolution, window_size=argv.window, balance=argv.balance)
-    main(argv.path, outdir, resolution=argv.resolution, window_size=argv.window, balance=False)
+    main(argv.path, outdir, resolution=argv.resolution, window_size=argv.window, balance=argv.balance)
