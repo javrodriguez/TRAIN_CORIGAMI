@@ -24,4 +24,4 @@ module unload gcc/8.1.0
 module load anaconda3/cpu/5.2.0
 conda activate hicexplorer
 
-cooler load -f bg2 hg38.size:10000 matrix.txt matrix.cool
+cooler load -f bg2 --count-as-float hg38.size:10000 matrix.txt matrix.cool
