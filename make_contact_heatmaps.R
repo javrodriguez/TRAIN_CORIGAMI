@@ -1,16 +1,12 @@
 # functions
 plotMat=function(data,start,end,max_distance,resolution){
-  res=resolution
-  s=ceiling(start/res)
-  e=ceiling(end/res)
-  max=max_distance/res
-  
   x=as.matrix(log(data[s:e,s:e]+1))
   x=rotateMatrix(x, -45)
   c=e/2
   x1=x[(c-max):c,]
   coord=paste0(chr,"_",start,"-",end)
-  png(paste0("contact_hmap_",coord,".png"),width = 1920, height = 240)
+  
+  pdf(paste0("contact_hmap_",coord,".pdf"),width = 21, height = 3.3)
   print(pheatmap(x1,main=paste0("Coordinates: ",chr,":",start,"-",end," (bp); Max distance: ",max_distance, " (bp)"),
            cluster_rows = F,cluster_cols = F,
            show_rownames = F,show_colnames = F,
@@ -34,7 +30,6 @@ chromosomes = c(paste0("chr",1:22))
 options(scipen = 999)
 np <- import("numpy")
 
-chromosomes="chr10"
 for (chr in chromosomes){
   print(chr)
   # data reading
